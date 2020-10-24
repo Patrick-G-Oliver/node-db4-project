@@ -1,0 +1,31 @@
+{
+  "name": "node-db4-project",
+  "version": "1.0.0",
+  "description": "## Instructions",
+  "main": "index.js",
+  "dependencies": {
+    "knex": "^0.21.6",
+    "nodemon": "^2.0.6",
+    "sqlite3": "^5.0.0"
+  },
+  "devDependencies": {
+    "express": "^4.17.1"
+  },
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon index.js",
+	"start": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Patrick-G-Oliver/node-db4-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Patrick-G-Oliver/node-db4-project/issues"
+  },
+  "homepage": "https://github.com/Patrick-G-Oliver/node-db4-project#readme"
+}
