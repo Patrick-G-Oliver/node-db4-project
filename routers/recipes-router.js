@@ -21,4 +21,19 @@ router.get("/recipes/:id/ingredients", async (req, res, next) => {
 	}
 })
 
+router.get("/recipes/:id/instructions", async (req, res, next) => {
+	try {
+		const instructions = await recipeModel.getInstructions(req.params.id)
+		if (!instructions) {
+			return res.status(404).json({
+				message: "instructions not found",
+			})
+		}
+
+		res.json(instructions)
+	} catch(err) {
+		next(err)
+	}
+})
+
 module.exports = router

@@ -16,7 +16,10 @@ function getShoppingList(recipe_id) {
 }
 
 function getInstructions(recipe_id) {
-    return db("instructions")
+    return db("instructions as i")
+        .leftJoin("recipes as r", "r.id", "i.recipe_id")
+        .where("r.id", recipe_id)
+        .select("i.instruction_number", "i.procedure")
 }
 
 module.exports = {
