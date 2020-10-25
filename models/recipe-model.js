@@ -8,6 +8,7 @@ function getRecipes() {
 
 SELECT *
 FROM recipes
+
 */
 
 function getShoppingList(recipe_id) {
@@ -28,6 +29,7 @@ FROM recipes_ingredients AS ri
 JOIN recipes AS r ON r.id = ri.recipe_id
 JOIN ingredients AS i ON i.id = ri.ingredient_id
 WHERE r.id = ?
+
 */
 
 function getInstructions(recipe_id) {
@@ -43,10 +45,26 @@ SELECT i.instruction_number, i.procedure
 FROM instructions AS i
 LEFT JOIN recipes AS r ON r.id = i.recipe_id
 WHERE r.id = ?
+
+*/
+
+function getRecipeById(id) {
+	return db("recipes")
+		.where("id", id)
+		.first()
+}
+
+/* getRecipeById() translates as:
+
+SELECT *
+FROM recipes
+WHERE recipes.id = ?
+
 */
 
 module.exports = {
     getRecipes,
     getShoppingList,
     getInstructions,
+    getRecipeById,
 }

@@ -34,13 +34,6 @@ exports.up = async function(knex) {
             .onDelete("CASCADE")
             .onUpdate("CASCADE")
             .notNull()
-        // table 
-        //     .text("ingredient_name")
-        //     .references("name")
-        //     .inTable("ingredients")
-        //     .onDelete("CASCADE")
-        //     .onUpdate("CASCADE")
-        //     .notNull()
         table
             .float("quantity").notNull()
         table
